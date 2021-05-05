@@ -1,0 +1,73 @@
+<%- include("partials/header"); -%>
+
+<script>
+  function popup() {
+    alert('Thank you for your interest! I will contact you ASAP. Click OK to head back to the home page');
+  }
+</script>
+
+<section id="schedule">
+    <div class="container-fluid">
+        <h2 class="bookText">Don't wait. Schedule now and take the first step towards magnificence.</h2>
+        <hr>
+        <form action="/schedule" method="post">
+            <div class="form-group row">
+              <label for="name" class="col-sm-2 col-form-label">Your Full Name</label>
+              <div class="col-sm-10">
+                <input type="text" class="form-control" name="name" id="name" placeholder="First and Last name">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="email" class="col-sm-2 col-form-label">Your Email</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+              </div>
+            </div>
+            <div class="form-group row">
+                <label for="phone" class="col-sm-2 col-form-label">Your Phone #</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" name="phone" id="phone" placeholder="Phone Number">
+                </div>
+              </div>
+            <fieldset class="form-group">
+              <div class="row">
+                <legend class="col-form-label col-sm-2 pt-0">Package choice</legend>
+                <div class="col-sm-10">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sessions" id="gridRadios1" value="one">
+                    <label class="form-check-label" for="gridRadios1">
+                      Single Session
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sessions" id="gridRadios2" value="three">
+                    <label class="form-check-label" for="gridRadios2">
+                      3 Sessions
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="sessions" id="gridRadios3" value="six">
+                    <label class="form-check-label" for="gridRadios3">
+                      6 Sessions
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div class="form-group row">
+                <label for="usercomment" class="col-sm-2 col-form-label">In a few words, tell me what you're looking to gain from these sessions.</label>
+                <div class="col-sm-10">
+                <textarea class="form-control" id="usercomment" name="comment" rows="5"></textarea>
+                </div>
+              </div>
+            <div class="form-group row">
+              <div class="col-sm-10 subBtn">
+                <button type="submit" class="btn btn-success btn-lg btn-block bookBtn" onclick="popup()">Submit</button>
+              </div>
+            </div>
+          </form>
+        <h3 class="bookText">I will reach out to you as soon as possible and we can set up an appointment that works best within your own personal schedule.</h3>
+    </div>
+</section>
+
+<%- include("partials/footer"); -%>

@@ -1,0 +1,36 @@
+<%- include("partials/header"); -%>
+
+<div class="parallax1"></div>
+<section id="quotes">
+	<div id="carouselControls" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<p class="quote">"We inherently possess gifts, talents, skills, interests that all meant for us explore and share with the world. They are essentially unique expressions of our soul, but far too often they are left buried, hidden, untapped and undiscovered out fear of judgement or fear of failure.⁣"</p>
+			</div>
+		<% quotes.forEach(function(quote) { %> 
+			<div class="carousel-item">
+				<p class="quote">"<%=quote.content%>"</p>
+			</div>
+		<% }); %>
+		</div>
+		<a class="carousel-control-prev" href="#carouselControls" role="button" data-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#carouselControls" role="button" data-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+		</a>
+	</div>
+</section>
+<div class="parallax2"></div>
+    
+<section id="cta">
+	<h2>Stop hesitating. Take the step to better your life today.</h2>
+	<a class="btn btn-success btn-lg ctaBtn" href="/about" role="button">About Me</a>
+	<a class="btn btn-success btn-lg ctaBtn" href="/pricing" role="button">Schedule Now</a>
+	<a class="btn btn-success btn-lg ctaBtn" href="/learn" role="button">  Learn More</a>
+</section>
+<div class="parallax3"></div>
+
+<%- include("partials/footer"); -%>

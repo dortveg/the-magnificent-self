@@ -1,0 +1,16 @@
+<%- include("partials/header"); -%>
+
+<section id="login">
+    <div class="container-fluid">
+        <h1 class="bookText">Login</h1>
+        <form action="/admin" method="post" class="pw">
+            <div class="form-group">
+                <label for="multipass">Password</label>
+                <input type="password" name="multipass" class="form-control" id="multipass">
+            </div>
+            <button type="submit" class="btn btn-success bookBtn" id="pwBtn">Submit</button>
+        </form>
+    </div>
+</section>
+
+<%- include("partials/footer"); -%>

@@ -1,0 +1,31 @@
+<%- include("partials/header"); -%>
+
+<section id="learn">
+    <h1>Check out some of my posts, musings, and lessons.</h1>
+    <hr>
+    <div class="container-fluid">
+        <div class="row">
+            <% posts.forEach(function(post) { %> 
+            <div class="col-lg-4 col-md-6">
+                <div class="card posts">
+                    <div class="card-body post">
+                        <p class="postContent"><%=post.content%></p>
+                        <a href="javascript:void(0);" class="readMore">Read More...</a>
+                    </div>
+                </div>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</section>
+
+<!--collapsible read more functionality-->
+<script>
+$(".readMore").on('click', function() {
+	$(this).parent().toggleClass("showPost");
+	let toglText = $(this).parent().hasClass("showPost") ? 'Read Less...' : 'Read More...';
+	$(this).text(toglText);
+});
+</script>
+
+<%- include("partials/footer"); -%>

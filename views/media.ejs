@@ -1,0 +1,18 @@
+<%- include("partials/header"); -%>
+
+<section id="media">
+    <div class="container-fluid greeting">
+		<h1>Check out some great videos!</h1>
+		<div class="row videos"> 
+    <% videos.forEach(function(video) { %>
+			<div class="col-lg-6"> 
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe class="embed-responsive-item" src="<%=video.url%>" allowfullscreen></iframe>
+				</div>
+				<h6><%=video.description%></h6>
+			</div>
+		<% }); %>
+    </div>
+</section>
+
+<%- include("partials/footer"); -%>

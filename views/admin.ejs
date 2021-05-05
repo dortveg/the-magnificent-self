@@ -1,0 +1,84 @@
+<%- include("partials/header"); -%>
+
+<section id="compose">
+    <div class="container-fluid">
+        <h1>Compose</h1>
+        <form action="/compose" method="post">
+            <div class="form-group">
+                <p>Post</p>
+                <textarea class="form-control" name="post" id="post" cols="100" rows="7"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success ctaBtn">Publish Post</button>
+        </form>
+        <hr>
+        <form action="/compose" method="post">
+            <div class="form-group">
+                <p>Quote</p>
+                <textarea class="form-control" name="quote" id="quote" cols="100" rows="6"></textarea>
+            </div>
+            <button type="submit" class="btn btn-success ctaBtn">Publish Quote</button>
+        </form>
+        <hr>
+        <form action="/compose" method="post">
+            <div class="form-group">
+                <p>Video</p>
+                <input type="text" name="url" placeholder="Video URL">
+                <input type="text" name="description" placeholder="Description">
+            </div>
+            <button type="submit" class="btn btn-success ctaBtn">Publish Video</button>
+        </form>
+    </div>
+</section>
+
+<section id="controls">
+<h1>Client List</h1>
+<hr>
+<% clients.forEach(function(client) { %> 
+    <p>Name: <%=client.name%></p>
+    <p>Email: <%=client.email%></p>
+    <p>Phone: <%=client.phone%></p>
+    <p>Sessions: <%=client.sessions%></p>
+    <p>Comments: <%=client.comment%></p>
+    <h5>________________________________________</h5>
+<% }); %>
+<br>
+<h1 class="contentList">Content List</h1>
+<p>Click the checkbox to delete an item</p>
+<hr>
+<br>
+<h2 class="hubLabel">Posts</h2>
+<% posts.forEach(function(post) { %> 
+    <form action="/delete" method="post">
+        <div>
+            <input type="checkbox" name="check" value="<%=post._id%>" onChange="this.form.submit()"> 
+            <p class="itemDesc"><%=post.content.substring(0, 100)%>...</p>
+            <h5>________________________________________</h5>
+        </div>
+        <input type="hidden" name="type" value="post"></input>
+    </form>
+<% }); %>
+<h2 class="hubLabel">Quotes</h2>
+<% quotes.forEach(function(quote) { %> 
+    <form action="/delete" method="post">
+        <div>
+            <input type="checkbox" name="check" value="<%=quote._id%>" onChange="this.form.submit()"> 
+            <p class="itemDesc"><%=quote.content.substring(0, 100)%>...</p>
+            <h5>________________________________________</h5>
+        </div>
+        <input type="hidden" name="type" value="quote"></input>
+    </form>
+<% }); %>
+<h2 class="hubLabel">Videos</h2>
+<% videos.forEach(function(video) { %> 
+    <form action="/delete" method="post">
+        <div>
+            <input type="checkbox" name="check" value="<%=video._id%>" onChange="this.form.submit()"> 
+            <p class="itemDesc"><%=video.description.substring(0, 100)%>...</p>
+            <h5>________________________________________</h5>
+        </div>
+        <input type="hidden" name="type" value="video"></input>
+    </form>
+<% }); %>
+</section>
+
+<%- include("partials/footer"); -%>
