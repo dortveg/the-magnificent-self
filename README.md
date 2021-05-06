@@ -8,7 +8,7 @@ Live site [here](https://shielded-journey-46924.herokuapp.com/), deployed on Her
 Bootstrap\
 EJS\
 JQuery\
-Font Awesome\
+Font Awesome
 
 Other node modules include: md5, mongoose and dotenv.
 
