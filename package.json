@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "George Tevdo",
-  "license": "ISC",
+  "license": "MIT",
   "engines": {
     "node": "10.19.0"
   },
