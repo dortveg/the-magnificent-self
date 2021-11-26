@@ -6,9 +6,9 @@ const md5 = require('md5');
 const app = express();
 
 mongoose.connect(process.env.DB, {
-  useNewUrlParser: true, 
-  useUnifiedTopology: true, 
-  useFindAndModify: false
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+  //useFindAndModify: false
 });
 
 app.set('view engine', 'ejs');
