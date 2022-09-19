@@ -209,6 +209,9 @@ app.post('/schedule', function(req, res) {
 
 //Server
 
-app.listen(process.env.PORT || 3000, function() {
-    console.log("Server started");
+// app.listen(process.env.PORT || 3000, function() {
+//     console.log("Server started");
+// });
+app.listen(80, function() {
+    console.log("Server started on 80");
 });
